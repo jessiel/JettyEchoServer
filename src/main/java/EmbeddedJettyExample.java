@@ -18,6 +18,4 @@ public class EmbeddedJettyExample {
     handler.addServlet(ExampleServlet.class, "/");
     server.start();
   }
-
-
 }
