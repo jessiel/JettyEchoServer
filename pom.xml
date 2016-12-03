@@ -26,24 +26,22 @@
 
     </dependencies>
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>EmbeddedJettyExample</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
+                <groupId>org.scalatest</groupId>
+                <artifactId>scalatest-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.dstovall</groupId>
+                <groupId>com.jolira</groupId>
                 <artifactId>onejar-maven-plugin</artifactId>
                 <version>1.4.4</version>
                 <executions>
                     <execution>
+                        <configuration>
+                            <mainClass>EmbeddedJettyExample</mainClass>
+                            <filename>echo.jar</filename>
+                        </configuration>
                         <goals>
                             <goal>one-jar</goal>
                         </goals>
@@ -52,5 +50,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
