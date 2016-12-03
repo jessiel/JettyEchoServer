@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class EmbeddedJettyExample {
 
   public static void main(String[] args) throws Exception {
-    Server server = new Server(8686);
+    Server server = new Server(8080);
     ServletContextHandler handler = (new ServletContextHandler(server, "/responseEndpoint"));
     handler.addServlet(ExampleServlet.class, "/");
     server.start();
